@@ -61,13 +61,17 @@ class AppContainer extends React.PureComponent<IAppComponentProps, IAppComponent
     render() {
         const renderedView = (
             this.state.userContentReactions.length ? (
-                <Div>
+                <React.Fragment>
                     <Trigger reactions={this.state.reactions}/>
                     <SummaryComponent users={this.state.users} userContentReactions={this.state.userContentReactions} reactions={this.state.reactions} reactionMapCount={this._reactionMapCount}/>
-                </Div>
+                </React.Fragment>
             ) : <Spinner/>
         )
-        return renderedView;
+        return (
+            <Div>
+                {renderedView}
+            </Div>
+        )
     }
 
 }

@@ -67,7 +67,7 @@ class SummaryComponent extends React.PureComponent<ISummaryComponentProps, ISumm
                 <TabHeaderContainer>
                     <Tabs>
                         <Tab onClick={() => this.tabClickHandler(999)} active={this.state.activeTabIndex === 999}>
-                            <TabHeader height='39px'>
+                            <TabHeader height={'39px'} emphasis={'bold'} >
                                 All
                             </TabHeader>
                         </Tab>

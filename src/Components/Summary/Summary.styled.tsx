@@ -18,11 +18,12 @@ const SmallCircle = styled.span`
 const Text = styled.span`
   padding-left: 8px;
 `
-const TabHeader = styled.div<{height?: string}>`
+const TabHeader = styled.div<{height?: string, emphasis?: string}>`
  display: flex;
  justify-content: center;
  align-items: center;
  height: ${(props) => props.height};
+ ${(props) => props.emphasis && `font-weight: ${props.emphasis}`}
 `
 
 const TabHeaderContainer = styled.div`

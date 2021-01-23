@@ -8,4 +8,5 @@ const Div = styled.div`
     place-items: center;
 `
 
+
 export {Div}

@@ -6,6 +6,7 @@ import {Div} from "./AppComponent.styled";
 import {IUser} from "../Types/user.types";
 import {IUserContentReaction} from "../Types/userContent.types";
 import SummaryComponent from "../Components/Summary/Summary";
+import Spinner from "../Components/Spinner/Spinner.styled";
 
 
 interface IAppComponentProps {
@@ -58,12 +59,15 @@ class AppContainer extends React.PureComponent<IAppComponentProps, IAppComponent
 
 
     render() {
-        return (
-            <Div>
-                <Trigger reactions={this.state.reactions}/>
-                <SummaryComponent users={this.state.users} userContentReactions={this.state.userContentReactions} reactions={this.state.reactions} reactionMapCount={this._reactionMapCount}/>
-            </Div>
-        );
+        const renderedView = (
+            this.state.userContentReactions.length ? (
+                <Div>
+                    <Trigger reactions={this.state.reactions}/>
+                    <SummaryComponent users={this.state.users} userContentReactions={this.state.userContentReactions} reactions={this.state.reactions} reactionMapCount={this._reactionMapCount}/>
+                </Div>
+            ) : <Spinner/>
+        )
+        return renderedView;
     }
 
 }

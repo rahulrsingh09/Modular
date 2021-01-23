@@ -8,5 +8,10 @@ const Div = styled.div`
     place-items: center;
 `
 
+const EmojiButton = styled.div`
+  width: 40px;
+  height: 40px;
+  background-color: red;
+`
 
-export {Div}
+export {Div, EmojiButton}

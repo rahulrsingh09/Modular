@@ -40,8 +40,7 @@ const DetailsComponent = styled.div`
   display: flex;
   height: 300px;
   width: 100%;
-  justify-content: center;
-  align-items: center;  
+  overflow-x: auto;
 `
 
 export {Div, SmallCircle, Text, TabHeader, TabHeaderContainer,SummaryHeader, DetailsComponent}

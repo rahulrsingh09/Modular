@@ -19,4 +19,5 @@ export const Tab = styled.button<{active: boolean}>`
 
 export const Content = styled.div<{active: boolean}>`
   ${props => (props.active ? "" : "display:none")}
+  
 `;

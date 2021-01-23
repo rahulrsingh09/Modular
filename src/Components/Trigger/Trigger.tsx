@@ -5,6 +5,8 @@ import {Div} from "./Trigger.styled";
 import {ToolTip, ToolTipText} from "../Tooltip/Tootip.styled";
 
 interface ITriggerProps extends IReactions{
+   onHoverEventHandler: (data: any) => void
+   onClickHandler: (data: any) => void
 }
 
 const Trigger = (props: ITriggerProps) => {
@@ -12,7 +14,7 @@ const Trigger = (props: ITriggerProps) => {
    const getEmojisList = (): React.ReactElement => {
       const list = <React.Fragment>
          {props.reactions.map(reaction =>
-             <ToolTip>
+             <ToolTip onMouseEnter={() => props.onHoverEventHandler(reaction.id)} onClick={() => props.onClickHandler(reaction)}>
                 <Emoji id={reaction.id} name={reaction.name} emoji={reaction.emoji} key={reaction.id}/>
                 <ToolTipText>
                    {reaction.name}

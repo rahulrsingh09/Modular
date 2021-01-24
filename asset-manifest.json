@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Modular/static/css/main.cc16b060.chunk.css",
-    "main.js": "/Modular/static/js/main.9c2c739b.chunk.js",
-    "main.js.map": "/Modular/static/js/main.9c2c739b.chunk.js.map",
+    "main.js": "/Modular/static/js/main.1a34bf68.chunk.js",
+    "main.js.map": "/Modular/static/js/main.1a34bf68.chunk.js.map",
     "runtime-main.js": "/Modular/static/js/runtime-main.701f2959.js",
     "runtime-main.js.map": "/Modular/static/js/runtime-main.701f2959.js.map",
     "static/js/2.7ed41794.chunk.js": "/Modular/static/js/2.7ed41794.chunk.js",
@@ -11,12 +11,13 @@
     "static/js/3.d6f4174f.chunk.js.map": "/Modular/static/js/3.d6f4174f.chunk.js.map",
     "index.html": "/Modular/index.html",
     "static/css/main.cc16b060.chunk.css.map": "/Modular/static/css/main.cc16b060.chunk.css.map",
-    "static/js/2.7ed41794.chunk.js.LICENSE.txt": "/Modular/static/js/2.7ed41794.chunk.js.LICENSE.txt"
+    "static/js/2.7ed41794.chunk.js.LICENSE.txt": "/Modular/static/js/2.7ed41794.chunk.js.LICENSE.txt",
+    "static/media/reaction.91a6f51c.svg": "/Modular/static/media/reaction.91a6f51c.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.701f2959.js",
     "static/js/2.7ed41794.chunk.js",
     "static/css/main.cc16b060.chunk.css",
-    "static/js/main.9c2c739b.chunk.js"
+    "static/js/main.1a34bf68.chunk.js"
   ]
 }

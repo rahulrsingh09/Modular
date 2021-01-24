@@ -4,8 +4,9 @@ import {IReaction} from "../../Types/reactions.types";
 import {Content, Tab, Tabs} from "../Tabs/Tabs";
 import {IUser} from "../../Types/user.types";
 import Emoji from "../Emoji/Emoji";
-import {DetailsComponent, Div, SmallCircle, SummaryHeader, TabHeader, TabHeaderContainer, Text} from "./Summary.styled";
+import {DetailsComponent, SummaryContainer, SmallCircle, SummaryHeader, TabHeader, TabHeaderContainer} from "./Summary.styled";
 import Item from "../Item/Item";
+import {Text} from "../Common.Styled.tsx/Styled";
 
 const ALL_TAB_INDEX = 999;
 
@@ -37,7 +38,7 @@ class SummaryComponent extends React.PureComponent<ISummaryComponentProps, ISumm
         })
         props.userContentReactions.forEach((userContent) => {
             let userIds:Array<number> | undefined = this._userContentReactionsMap.get(userContent.reaction_id);
-            if(userIds == undefined) userIds = [];
+            if(userIds === undefined) userIds = [];
             userIds.push(userContent.user_id)
             this._userContentReactionsMap.set(userContent.reaction_id, userIds)
         })
@@ -52,7 +53,7 @@ class SummaryComponent extends React.PureComponent<ISummaryComponentProps, ISumm
                                id={reaction.id} key={reaction.id} preventHover={true}
                                customPadding={'2px 8px 4px 0px'}/>
                         <SmallCircle/>
-                        <Text>{this.props.reactionMapCount.get(reaction.id)}</Text>
+                        <Text padding={"0 0 0 8px"}>{this.props.reactionMapCount.get(reaction.id)}</Text>
                     </TabHeader>
                 </Tab>
             )
@@ -63,12 +64,14 @@ class SummaryComponent extends React.PureComponent<ISummaryComponentProps, ISumm
     getFilteredContent = (id:number, tabIndex:number) => {
         let filteredContent;
             const userIds = this._userContentReactionsMap.get(id);
-            if(userIds != undefined ){
+            if(userIds !== undefined ){
                 filteredContent = userIds.map(userId => {
                     const user = this._userIdToUsersMap.get(userId);
                     const reaction:IReaction | undefined = this._reactionIdToReactionsMap.get(id)
-                    if(user != undefined && reaction !=undefined){
+                    if(user !== undefined && reaction !== undefined){
                         return <Item user={user} reaction={reaction}/>
+                    } else{
+                        return null
                     }
                 })
         }
@@ -80,7 +83,8 @@ class SummaryComponent extends React.PureComponent<ISummaryComponentProps, ISumm
         filteredContent = this.props.userContentReactions.map(userContentId => {
             const user: IUser | undefined = this._userIdToUsersMap.get(userContentId.user_id);
             const reaction:IReaction | undefined = this._reactionIdToReactionsMap.get(userContentId.reaction_id)
-            if (user !=undefined && reaction !=undefined) return <Item user={user} reaction={reaction}/>
+            if (user !== undefined && reaction !== undefined) return <Item user={user} reaction={reaction}/>
+            else return null
         })
         return filteredContent;
     }
@@ -99,7 +103,7 @@ class SummaryComponent extends React.PureComponent<ISummaryComponentProps, ISumm
 
     render() {
         return (
-            <Div>
+            <SummaryContainer>
                 <SummaryHeader>Reactions</SummaryHeader>
                 <TabHeaderContainer>
                     <Tabs>
@@ -117,7 +121,7 @@ class SummaryComponent extends React.PureComponent<ISummaryComponentProps, ISumm
                     </Content>
                     {this.getTabContent()}
                 </DetailsComponent>
-            </Div>
+            </SummaryContainer>
         );
     }
 

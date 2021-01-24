@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 const ItemContainer = styled.div`
-  padding: 16px 16px 0px 16px;
-  box-sizing: border-box;
   width: 100%;
-  height: 40px;
+  height: max-content;
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
 `
 
 const Image = styled.img`
@@ -15,8 +14,4 @@ const Image = styled.img`
   height: 30px;
 `
 
-const Text = styled.span`
-  text-align: center;
-`
-
-export {Image, ItemContainer, Text}
+export {Image, ItemContainer}

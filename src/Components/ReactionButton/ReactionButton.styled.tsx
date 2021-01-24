@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Div = styled.div<{active:boolean}>`
+const ReactionButtonWrapper = styled.div<{active:boolean}>`
     height: 32px;
     border-radius: 24px;
     width:50px;
@@ -12,4 +12,4 @@ const Div = styled.div<{active:boolean}>`
     ${(props) => props.active && "​background-color: #edf5ff"};
 `
 
-export {Div}
+export {ReactionButtonWrapper}

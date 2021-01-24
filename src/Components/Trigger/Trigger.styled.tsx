@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-const Div = styled.div`
+const TriggerWrapper = styled.div`
   padding: 0px 12px;
   display: flex;
   box-sizing: border-box;
@@ -13,4 +13,4 @@ const Div = styled.div`
   height: min-content;
 `
 
-export {Div}
+export {TriggerWrapper}

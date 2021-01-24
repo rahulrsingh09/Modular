@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {IReactions} from "../../Types/reactions.types";
 import Emoji from "../Emoji/Emoji";
-import {Div} from "./Trigger.styled";
+import {TriggerWrapper} from "./Trigger.styled";
 import {ToolTip, ToolTipText} from "../Tooltip/Tootip.styled";
 
 interface ITriggerProps extends IReactions{
@@ -26,9 +26,9 @@ const Trigger = (props: ITriggerProps) => {
    }
 
    return (
-       <Div>
+       <TriggerWrapper>
           {getEmojisList()}
-       </Div>
+       </TriggerWrapper>
    )
 }
 

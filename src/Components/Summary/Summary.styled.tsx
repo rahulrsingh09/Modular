@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Div = styled.div`
+const SummaryContainer = styled.div`
     width: max-content;
     -webkit-box-shadow: 3px 0px 35px -8px rgba(0,0,0,0.24);
     -moz-box-shadow: 3px 0px 35px -8px rgba(0,0,0,0.24);
@@ -14,10 +14,6 @@ const SmallCircle = styled.span`
   height: 4px;
   border-radius: 50%;
   background-color: black;
-`
-
-const Text = styled.span`
-  padding-left: 8px;
 `
 const TabHeader = styled.div<{height?: string, emphasis?: string}>`
  display: flex;
@@ -42,6 +38,8 @@ const DetailsComponent = styled.div`
   height: 300px;
   width: 100%;
   overflow-x: auto;
+  padding: 16px;
+  box-sizing: border-box;
 `
 
-export {Div, SmallCircle, Text, TabHeader, TabHeaderContainer,SummaryHeader, DetailsComponent}
+export {SummaryContainer, SmallCircle, TabHeader, TabHeaderContainer,SummaryHeader, DetailsComponent}

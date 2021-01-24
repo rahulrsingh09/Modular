@@ -1,6 +1,6 @@
 import React from 'react';
 import {IReaction} from "../../Types/reactions.types";
-import {Span} from "./Emoji.styled";
+import {EmojiWrapper} from "./Emoji.styled";
 
 export interface IEmoji extends IReaction{
     preventHover: boolean;
@@ -8,7 +8,7 @@ export interface IEmoji extends IReaction{
 }
 
 const Emoji = (props: IEmoji) => (
-    <Span
+    <EmojiWrapper
         customPadding={props.customPadding}
         preventHover={props.preventHover}
         role="img"
@@ -17,7 +17,7 @@ const Emoji = (props: IEmoji) => (
         key={props.id}
     >
         {props.emoji}
-    </Span>
+    </EmojiWrapper>
 );
 
 Emoji.defaultProps ={

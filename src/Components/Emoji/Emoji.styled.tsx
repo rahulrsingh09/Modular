@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-const Span = styled.span<{preventHover: boolean, customPadding: string}>`
+const EmojiWrapper = styled.span<{preventHover: boolean, customPadding: string}>`
   padding: ${(props) => props.customPadding ? props.customPadding: null};
   display: inline-block;
   transition: transform .2s;
@@ -13,4 +13,4 @@ const Span = styled.span<{preventHover: boolean, customPadding: string}>`
 }`}
 `
 
-export {Span}
+export {EmojiWrapper}

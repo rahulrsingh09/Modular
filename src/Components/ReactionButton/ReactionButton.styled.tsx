@@ -8,7 +8,7 @@ const Div = styled.div<{active:boolean}>`
     display: flex;
     padding: 0 8px;
     align-items: center;
-    ${(props) => props.active && "border:1px solid #0f62fe"};
+    ${(props) => props.active && "border:2px solid #0f62fe"};
     ${(props) => props.active && "​background-color: #edf5ff"};
 `
 

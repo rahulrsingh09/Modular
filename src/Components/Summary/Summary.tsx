@@ -46,7 +46,7 @@ class SummaryComponent extends React.PureComponent<ISummaryComponentProps, ISumm
     getTabs = () => {
         const Tabs = this.props.reactions.map((reaction, index) => {
             return (
-                <Tab onClick={() => this.props.tabClickHandler(index)} active={this.props.globalTabIndex === reaction.id}>
+                <Tab onClick={() => this.props.tabClickHandler(reaction.id)} active={this.props.globalTabIndex === reaction.id}>
                     <TabHeader>
                         <Emoji emoji={reaction.emoji} name={reaction.name}
                                id={reaction.id} key={reaction.id} preventHover={true}

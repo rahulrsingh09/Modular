@@ -5,6 +5,7 @@ const Div = styled.div`
     -webkit-box-shadow: 3px 0px 35px -8px rgba(0,0,0,0.24);
     -moz-box-shadow: 3px 0px 35px -8px rgba(0,0,0,0.24);
     box-shadow: 3px 0px 35px -8px rgba(0,0,0,0.24);
+    height: max-content;
 `
 
 const SmallCircle = styled.span`

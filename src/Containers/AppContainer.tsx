@@ -2,13 +2,13 @@ import * as React from 'react';
 import API, {REACTIONS_REQUEST, USER_CONTENT_REACTIONS, USERS} from "../api";
 import {IReaction, IReactions} from "../Types/reactions.types";
 import Trigger from "../Components/Trigger/Trigger";
-import {Div, EmojiButton} from "./AppComponent.styled";
+import {AppContainerWrapper, EmojiButton, TopButtonContainer} from "./AppComponent.styled";
 import {IUser} from "../Types/user.types";
 import {IUserContentReaction} from "../Types/userContent.types";
 import SummaryComponent from "../Components/Summary/Summary";
 import Spinner from "../Components/Spinner/Spinner.styled";
 import ReactionButton from "../Components/ReactionButton/ReactionButton";
-
+import reactionIcon from '../assets/reaction.svg';
 
 interface IAppComponentProps {
 
@@ -74,6 +74,7 @@ class AppContainer extends React.PureComponent<IAppComponentProps, IAppComponent
     }
 
     tabClickHandler = (index:number) => {
+        console.log(index, 'RAHUL');
         if (index !== this.state.activeTabIndex) {
             this.setState({activeTabIndex: index});
         }
@@ -90,22 +91,24 @@ class AppContainer extends React.PureComponent<IAppComponentProps, IAppComponent
         const renderedView = (
             this.state.userContentReactions.length ? (
                 <React.Fragment>
-                    {this.state.toggleEmojis && <Trigger reactions={this.state.reactions}
-                                                         onHoverEventHandler={this.onHoverEventHandler}
-                                                         onClickHandler = {this.onClickEventHandler}/> }
-                    <EmojiButton onClick={this.onEmojiButtonClickHandler}/>
+                        {this.state.toggleEmojis && <Trigger reactions={this.state.reactions}
+                                                             onHoverEventHandler={this.onHoverEventHandler}
+                                                             onClickHandler = {this.onClickEventHandler}/> }
+                    <TopButtonContainer>
+                        <EmojiButton src={reactionIcon} onClick={this.onEmojiButtonClickHandler}/>
+                        {this.state.activeReaction && this.state.activeReaction.id &&
+                        <ReactionButton onToggleClickHandler={this.onClickEventHandler} activeReaction={this.state.activeReaction}/>}
+                    </TopButtonContainer>
                     <SummaryComponent users={this.state.users} userContentReactions={this.state.userContentReactions}
                                       reactions={this.state.reactions} reactionMapCount={this._reactionMapCount}
                                       globalTabIndex={this.state.activeTabIndex} tabClickHandler={this.tabClickHandler}/>
-                    {this.state.activeReaction && this.state.activeReaction.id &&
-                    <ReactionButton onToggleClickHandler={this.onClickEventHandler} activeReaction={this.state.activeReaction}/>}
                 </React.Fragment>
             ) : <Spinner/>
         )
         return (
-            <Div>
+            <AppContainerWrapper>
                 {renderedView}
-            </Div>
+            </AppContainerWrapper>
         )
     }
 
